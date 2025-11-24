@@ -14,7 +14,7 @@ import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
 import sparse
 
-sys.path.append('/home/ycks3/CDT_project/python_package')
+sys.path.append('/path/to/CDT_project/python_package')
 from EinsumNetwork import Graph, EinsumNetwork
 
 #########################################################
@@ -108,7 +108,7 @@ def load_model_eval(
     einet.initialize()
     # einet.to(device)
 
-    dir_best_model = '/home/ycks3/CDT_project/real_training/EM_14Feb/best_models/best_model_20Feb.pt'
+    dir_best_model = '/path/to/CDT_project/real_training/EM/best_models/best_model.pt'
     res_dict = torch.load(dir_best_model)
 
     einet.load_state_dict(res_dict['model_state_dict'])
