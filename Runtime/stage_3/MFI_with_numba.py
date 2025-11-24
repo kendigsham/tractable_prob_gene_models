@@ -14,7 +14,7 @@ from torch import optim
 from sklearn.preprocessing import binarize
 import time
 
-sys.path.append('/home/ycks3/CDT_project/python_package')
+sys.path.append('/path/to/CDT_project/python_package')
 
 from EinsumNetwork import Graph, EinsumNetwork
 import wandb

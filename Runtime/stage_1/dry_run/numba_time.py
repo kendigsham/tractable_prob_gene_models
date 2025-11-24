@@ -6,7 +6,7 @@ import time
 import torch
 from numba import prange
 
-sys.path.append('/home/ycks3/CDT_project/python_package')
+sys.path.append('/path/to/CDT_project/python_package')
 
 from EinsumNetwork import Graph, EinsumNetwork
 
