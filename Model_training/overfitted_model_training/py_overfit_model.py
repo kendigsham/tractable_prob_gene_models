@@ -16,7 +16,7 @@ from torch import optim
 from sklearn.preprocessing import binarize
 import time
 
-sys.path.append('/home/ycks3/CDT_project/python_package')
+sys.path.append('/path/to/CDT_project/python_package')
 
 from EinsumNetwork import Graph, EinsumNetwork
 import wandb
@@ -35,7 +35,7 @@ if 'cuda' in device.type:
 
 def prepare_dataset():
 
-	data_dir = '/home/ycks3/CDT_project/train_test_leonie'
+	data_dir = '/path/to/CDT_project/train_test_leonie'
 
 	counts_1 = pd.read_csv(f'{data_dir}/train.csv',index_col=0)
 
@@ -75,7 +75,7 @@ expo_family_args={'K': 2}
 
 #####################################################
 
-wandb.init(entity='jy_learn', project="EM_14Feb", name='overfit_model_29Mar')
+wandb.init(entity='jy_learn', project="EM", name='overfit_model')
 
 
 
@@ -138,7 +138,7 @@ for epoch_count in range(max_num_epochs):
 
 
 print('saving model')
-torch.save({'epoch': epoch_count, 'model_state_dict': einet.state_dict(),'val_NLL': epoch_val_LL, 'NLL': epoch_average_LL}, 'overfit_models/best_model_29Mar.pt')
+torch.save({'epoch': epoch_count, 'model_state_dict': einet.state_dict(),'val_NLL': epoch_val_LL, 'NLL': epoch_average_LL}, 'overfit_models/best_model.pt')
   
 
 

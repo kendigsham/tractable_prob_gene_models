@@ -16,7 +16,7 @@ from torch import optim
 from sklearn.preprocessing import binarize
 import time
 
-sys.path.append('/home/ycks3/CDT_project/python_package')
+sys.path.append('/path/to/CDT_project/python_package')
 
 from EinsumNetwork import Graph, EinsumNetwork
 import wandb
@@ -35,7 +35,7 @@ if 'cuda' in device.type:
 
 def prepare_dataset():
 
-	data_dir = '/home/ycks3/CDT_project/train_test_leonie'
+	data_dir = '/path/to/CDT_project/train_test_leonie'
 
 	counts_1 = pd.read_csv(f'{data_dir}/train.csv',index_col=0)
 

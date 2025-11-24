@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -A BMAI-CDT-SL2-GPU
+#SBATCH -A NAME-GPU
 #SBATCH -N 1
 #SBATCH -n 3
 #SBATCH -p ampere
@@ -10,11 +10,11 @@
 #SBATCH --output log.%j.log
 #SBATCH --gres=gpu:1
 
-source /home/ycks3/python_env/cirkit/bin/activate
+source /path/to/python_env/cirkit/bin/activate
 
 date
 
-python3 py_train_best_model_20Feb.py
+python3 py_train_best_model.py
 
 date
 
