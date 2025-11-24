@@ -18,7 +18,7 @@ import time
 import torch
 from torch.utils.data import DataLoader
 
-sys.path.append('/home/ycks3/CDT_project/python_package')
+sys.path.append('/path/to/CDT_project/python_package')
 
 from EinsumNetwork import Graph, EinsumNetwork
 import wandb
@@ -235,7 +235,7 @@ def load_model_eval(
     einet.initialize()
     einet.to('cuda')
 
-    dir_best_model = '/home/ycks3/CDT_project/real_training/EM_14Feb/best_models/best_model_20Feb.pt'
+    dir_best_model = '/path/to/CDT_project/real_training/EM/best_models/best_model.pt'
     res_dict = torch.load(dir_best_model)
 
     einet.load_state_dict(res_dict['model_state_dict'])
@@ -246,7 +246,7 @@ def load_model_eval(
 
 #####  I added this entire function to quantize
 def quantize_func(model):
-    data_dir = '/home/ycks3/CDT_project/train_test_leonie'
+    data_dir = '/path/to/CDT_project/train_test_leonie'
     counts_1 = pd.read_csv(f'{data_dir}/train.csv',index_col=0)
     part_20 = counts_1.sample(frac = 0.2)
     rest_part_80 = counts_1.drop(part_20.index)
